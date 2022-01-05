@@ -16,7 +16,7 @@ import Keysets from "./routes/keysets";
 
 //connect to the GraphQL server
 const httpLink = createHttpLink({
-  uri: "http://localhost:5000",
+  uri: "http://localhost:5000/",
 });
 const client = new ApolloClient({
   link: httpLink,
