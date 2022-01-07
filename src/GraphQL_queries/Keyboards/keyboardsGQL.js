@@ -2,8 +2,8 @@ const { gql } = require("@apollo/client");
 
 const ALL_QUERY = gql`
   {
-    books {
-      author
+    keyboards {
+      startDate
     }
   }
 `;
