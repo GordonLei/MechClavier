@@ -2,22 +2,11 @@
 //const bookQueries = require("../GraphQL_queries/Books/booksQueries");
 
 import React, { useState, useEffect } from "react";
-import KeyboardCard from "../components/keyboardCard/keyboardCard.jsx";
+import KeyboardTable from "../components/keyboardTable/keyboardTable";
 //  keyboardsQueries stuff
 const { useQuery } = require("@apollo/client");
-const keyboardQueries = require("../GraphQL_queries/Keyboards/keyboardsQueries");
+//  const keyboardQueries = require("../GraphQL_queries/Keyboards/keyboardsQueries");
 const keyboardsGQL = require("../GraphQL_queries/Keyboards/keyboardsGQL");
-
-const useGetAllKeyboards_AllFields = () => {
-  const { loading, error, data } = useQuery(keyboardsGQL.ALL_QUERY);
-  if (loading) return "Loading...";
-  if (error) return `Error! ${error.message}`;
-  if (data) {
-    //return data.keyboards[0].startDate;
-    console.log(data.keyboards);
-    return data.keyboards;
-  }
-};
 
 function Keyboards() {
   /*
@@ -47,9 +36,7 @@ function Keyboards() {
     return (
       <main style={{ padding: "1rem 0" }}>
         <h2>Keyboards</h2>
-        {data.keyboards.map((eachKeyboard, id) => {
-          return <h1 key={id}>{eachKeyboard.startDate}</h1>;
-        })}
+        <KeyboardTable data={data} />
       </main>
     );
   }

@@ -6,6 +6,7 @@ const keyboardPropertiesSchema = new Schema({
   layout: [String],
   caseColors: [String],
   typingAngle: String, //Schema.Types.Decimal128,
+  mountingType: String,
 });
 
 const linksSchema = new Schema({
@@ -14,6 +15,10 @@ const linksSchema = new Schema({
 });
 
 const vendorSchema = new Schema({
+  US: String,
+});
+
+const vendorNamesSchema = new Schema({
   US: String,
 });
 
@@ -28,6 +33,7 @@ const keyboardsSchema = new Schema({
   saleType: String,
   startDate: String,
   vendor: vendorSchema,
+  vendorNames: vendorNamesSchema,
 });
 
 module.exports = model("Keyboards", keyboardsSchema);

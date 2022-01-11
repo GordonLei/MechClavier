@@ -22,6 +22,7 @@ const typeDefs = gql`
     layout: [String]
     caseColors: [String]
     typingAngle: String
+    mountingType: String
   }
 
   type Links {
@@ -30,6 +31,10 @@ const typeDefs = gql`
   }
 
   type Vendor {
+    US: String
+  }
+
+  type VendorName {
     US: String
   }
 
@@ -44,6 +49,7 @@ const typeDefs = gql`
     saleType: String
     startDate: String
     vendor: Vendor
+    vendorNames: VendorName
   }
 
   # The "Query" type is special: it lists all of the available queries that
