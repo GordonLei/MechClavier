@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+//ApolloClient / GraphQL stuff
 import {
   ApolloProvider,
   ApolloClient,
@@ -11,8 +11,12 @@ import {
   InMemoryCache,
 } from "@apollo/client";
 //Routes
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Keyboards from "./routes/keyboards";
 import Keysets from "./routes/keysets";
+//React-Redux
+import store from "./store/store";
+import { Provider } from "react-redux";
 
 //connect to the GraphQL server
 const httpLink = createHttpLink({
@@ -25,15 +29,17 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/keyboards" element={<Keyboards />} />
-          <Route path="/keysets" element={<Keysets />} />
-        </Routes>
-      </BrowserRouter>
-    </ApolloProvider>
+    <Provider store={store}>
+      <ApolloProvider client={client}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/keyboards" element={<Keyboards />} />
+            <Route path="/keysets" element={<Keysets />} />
+          </Routes>
+        </BrowserRouter>
+      </ApolloProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
