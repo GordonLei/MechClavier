@@ -1,6 +1,6 @@
 import React from "react";
 
-function keyboardCard(props) {
+function KeyboardCard(props) {
   return (
     <section className="border-2 m-4">
       {/* This is the top part for the image */}
@@ -40,4 +40,4 @@ function keyboardCard(props) {
   );
 }
 
-export default keyboardCard;
+export default KeyboardCard;

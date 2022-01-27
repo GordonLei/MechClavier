@@ -14,13 +14,16 @@ const store = createStore(
 
 //  pure redux-toolkit
 import { configureStore } from "@reduxjs/toolkit";
+//  all the react-redux slicers
 import counterSlice from "./reducers/counter/counterReducer";
 import authenticationSlice from "./reducers/authentication";
+import searchKeyboardSlice from "./reducers/searchKeyboard";
 
 const store = configureStore({
   reducer: {
     counter: counterSlice.reducer,
     authentication: authenticationSlice.reducer,
+    searchKeyboard: searchKeyboardSlice.reducer,
   },
 });
 

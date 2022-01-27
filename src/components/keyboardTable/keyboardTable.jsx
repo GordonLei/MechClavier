@@ -2,7 +2,7 @@ import React from "react";
 
 import KeyboardCard from "../keyboardCard/keyboardCard";
 
-function keyboardTable(props) {
+function KeyboardTable(props) {
   return (
     <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 m-4 p-4">
       {props.data.keyboards.map((eachKeyboard, id) => {
@@ -12,4 +12,4 @@ function keyboardTable(props) {
   );
 }
 
-export default keyboardTable;
+export default KeyboardTable;
